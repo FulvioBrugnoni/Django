@@ -1,19 +1,14 @@
 from django.db import models
 
 
-CHOICES = [
-    ('1', '1'),
-    ('2', '2'),
-    ('3', '3'),
-    ('4', '4'),
-    ('5', '5'),
-    ('6', '6'),
-    ('7', '7'),
-]
 
 
 class Questionario(models.Model):
-    nome = models.CharField(max_length=20)
-    cognome = models.CharField(max_length=20)
-    q1 = models.CharField(max_length=20, choices = CHOICES)
-    q2 = models.CharField(max_length=20, choices = CHOICES)
+
+
+    class Meta:
+            tb_table ='Questionario'
+            verbose_name ='Questionario'
+            verbose_name_plural ='Questionari'
+            def __str__(self):
+                return self.name
