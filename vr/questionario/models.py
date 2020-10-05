@@ -23,3 +23,17 @@ class Domanda(models.Model):
             verbose_name_plural ='domande'
     def __str__(self):
         return self.chiave
+
+
+class QuestionarioDomanda(models.Model):
+
+    questionario= models.ForeignKey(Questionario, on_delete=models.PROTECT)
+    domanda = models.ForeignKey(Domanda, on_delete=models.PROTECT)
+    posizione =models.PositiveSmallIntegerField()
+
+    class Meta:
+            db_table ='questionario_domanda'
+            verbose_name ='questionario_domanda'
+            verbose_name_plural ='questionari_domanda'
+    def __str__(self):
+        return self.questionario
