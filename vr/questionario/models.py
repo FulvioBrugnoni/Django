@@ -1,14 +1,12 @@
 from django.db import models
 
 
-
-
 class Questionario(models.Model):
-
+    nome = name.Chardfield(max_lenght =256)
 
     class Meta:
-            tb_table ='Questionario'
-            verbose_name ='Questionario'
-            verbose_name_plural ='Questionari'
-            def __str__(self):
-                return self.name
+            db_table ='questionario'
+            verbose_name ='questionario'
+            verbose_name_plural ='questionari'
+        def __str__(self):
+            return self.name
